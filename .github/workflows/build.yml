@@ -35,6 +35,12 @@ jobs:
           tar -zxf automake-1.18.tar.gz && cd automake-1.18
           ./configure && make -j4
           sudo make install
+      - name: Install Pkgconf
+        run: |
+          curl -O https://distfiles.ariadne.space/pkgconf/pkgconf-2.5.1.tar.gz
+          tar -zxf pkgconf-2.5.1.tar.gz && cd pkgconf-2.5.1
+          ./configure && make -j4
+          sudo make install
       - name: Install GNU Libtool
         run: |
           curl -O https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.gz
