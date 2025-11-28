@@ -1,0 +1,17 @@
+name: MacOS Build for GNU Emacs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Install GNU M4
+        run: |
+          curl -O https://ftp.gnu.org/gnu/m4/m4-1.4.20.tar.gz
+          tar -zxf m4-1.4.20.tar.gz && cd m4-1.4.20
+          ./configure && make -j4
+          sudo make install
