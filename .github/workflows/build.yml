@@ -96,18 +96,6 @@ jobs:
           tar -Jxf libffi-3.5.2.tar.gz && cd libffi-3.5.2
           ./configure --disable-shared && make -j4
           sudo make install
-      - name: Install OpenSSL
-        run: |
-          curl -LO https://github.com/openssl/openssl/releases/download/openssl-3.6.0/openssl-3.6.0.tar.gz
-          tar -zxf openssl-3.6.0.tar.gz && cd openssl-3.6.0
-          ./config no-asm no-shared && make -j4
-          sudo make install
-      - name: Install Libexpat
-        run: |
-          curl -LO https://github.com/libexpat/libexpat/releases/download/R_2_7_3/expat-2.7.3.tar.gz
-          tar -zxf expat-2.7.3.tar.gz && cd expat-2.7.3
-          ./configure --disable-shared && make -j4
-          sudo make install
       - name: Install GNU Libgmp
         run: |
           curl -O https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.gz
