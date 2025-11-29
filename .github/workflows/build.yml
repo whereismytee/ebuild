@@ -120,9 +120,6 @@ jobs:
           tar -zxf v0.25.10.tar.gz && cd tree-sitter-0.25.10
           make -j4
           sudo make install
-      - name: Remove Dynamic Libraries
-        run: |
-          sudo find /usr/local/lib -name '*.dylib' -delete
       - name: Install Emacs
         run: |
           git clone -b 'feature/igc' --depth 1 https://github.com/emacs-mirror/emacs.git
