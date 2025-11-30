@@ -8,7 +8,8 @@ Emacs mailing list, as the source is not modified here.
 
 No package manager is used during the build process, as all external
 dependencies are fetched from upstream and compiled from source. A
-statically linked Emacs is produced (except the system components).
+statically linked Emacs is produced (except the system components),
+making link time optimization possible.
 
 > [!Note]
 > Emacs is built with the GNU MP Bignum Library, GnuTLS, Tree Sitter,
